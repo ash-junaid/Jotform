@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function checkinput() {
+        var jtechfit, jtechcomp, jcsrec, jcpro, jsku, jdac, jsolution, jothers;
+        jdate = document.getElementById("date").value;
+        jtechfit = document.getElementById("techfit").value;
+        jtechdetails = document.getElementById("techdetails").value;
+        jtechcomp = document.getElementById("techcomp").value;
+        jcsrec = document.getElementById("csrec").value;
+        jcpro = document.getElementById("cpro").value;
+        jsku = document.getElementById("sku").value;
+        jdac = document.getElementById("dac").value;
+        jsolution = document.getElementById("solution").value;
+        jothers = document.getElementById("others").value;
+        document.getElementById("output").value = "https://au.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1e488ea9-e8bd-4884-90d8-bf02498e48d7&env=au&acct=83361486-b93e-4564-bf5c-78a4e4d40183&v=2&Builder_UserName={builderName}&Builder_Email={builderEmail}&BuilderCompany=CompanyABC&Address={siteAddress}&Owner_UserName={ownerName}&Owner_Email={ownerEmail}&Pool_Type=" + jtechcomp + "&Region=" + jtechfit + "&Post_Code=" + jcpro;
+      }
+
+      function copyOutputText() {
+        const output = document.getElementById("output");
+        output.focus();
+        output.select();
+        document.execCommand("copy");
+        alert("Copied to clipboard!");
+      }
+      
+     function clearform() {
+  document.getElementById("myform").reset();
+}
+
+    </script>
+    <style>
+    </style>
+    <img src="https://i.ibb.co/98Zv6bp/DS-Logo.png" width=20% alt="DSLogo2">
+    <link rel="stylesheet" href="SEStyles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Maven+Pro" />
+</head>
+
+<body>
+    <p>
+        <label class="label" for="date">Date :</label>
+        <input type="text" id="date">
+    </p>
+    <script type="text/javascript">
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = dd + '/' + mm + '/' + yyyy;
+    document.getElementById("date").setAttribute('value', today);
+    </script>
+    <div class="container">
+        <form id="myform" onsubmit="return false">
+
+                <label class="label" for="dac">Builder Name: :</label>
+                <input type="text" name="DAC" id="dac" value="" />
+           
+            <p>
+            <label class="label" for="techfit">Region :</label>
+            <select id="techfit" name="Tech_Fit">
+                <option value="NSW">NSW</option>
+                <option value="VIC">VIC</option>
+                <option value="QLD">QLD</option>
+                <option value="WA">WA</option>
+            </select>
+            </p>
+            <p>
+                <label class="label" for="techcomp">Pool Type</label>
+                <select id="techcomp" name="Tech_Complexity">
+                    <option value="Above-Ground">Above-Ground</option>
+                    <option value="Fiberglass">Fiberglass</option>
+                    <option value="Concrete">Concrete</option>
+                </select>
+            </p>
+            <label class="label" for="techdetails">Builder Company:</label>
+            <input type="text" name="Tech_Details" id="techdetails" value="" />
+            
+            <p>
+                <label class="label" for="cpro">Post Code:</label>
+                <input type="text" name="Current_Process" id="cpro" value="" />
+            </p>
+           
+          
+            <button class="button1" onclick="checkinput()">Create</button>
+            <button class="button3" onclick="clearform()">Clear</button>
+        </form>
+    </div>
+    <div class="SENotes">
+        <textarea id="output" readonly="true" style="
+          width: 500px;
+          height: 400px;
+          border: 1px solid black;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 1.2em;
+          resize: none;"></textarea>
+        <button class="button2" onclick="copyOutputText()">Copy</button>
+    </div>
+</body>
+
+</html>
