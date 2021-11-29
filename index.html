@@ -13,7 +13,7 @@
      
         jcpro = document.getElementById("cpro").value;
       
-        document.getElementById("output").value = "https://au.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1e488ea9-e8bd-4884-90d8-bf02498e48d7&env=au&acct=83361486-b93e-4564-bf5c-78a4e4d40183&v=2&Builder_UserName={builderName}&Builder_Email={builderEmail}&BuilderCompany=CompanyABC&Address={siteAddress}&Owner_UserName={ownerName}&Owner_Email={ownerEmail}&Pool_Type=" + jtechcomp + "&Region=" + jtechfit + "&Post_Code=" + jcpro;
+        document.getElementById("output").value = "https://au.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1e488ea9-e8bd-4884-90d8-bf02498e48d7&env=au&acct=83361486-b93e-4564-bf5c-78a4e4d40183&v=2&Builder_UserName={builderName}&Builder_Email={builderEmail}&BuilderCompany=CompanyABC&Address={siteAddress}&Owner_UserName={ownerName}&Owner_Email={ownerEmail}&Pool_Type=" + jtechcomp + "&Region=" + jtechfit + "&Post_Code=" + jcpro + "";
       }
 
       function copyOutputText() {
@@ -30,6 +30,13 @@
 
     </script>
     <style>
+    .SENotes{
+
+        position: absolute;
+  
+  top: -450px;
+  right: 15px;
+    }
     </style>
     <img src="https://i.ibb.co/98Zv6bp/DS-Logo.png" width=20% alt="DSLogo2">
     <link rel="stylesheet" href="SEStyles.css">
@@ -90,10 +97,10 @@
     <div class="SENotes">
         <textarea id="output" readonly="true" style="
           width: 500px;
-          height: 400px;
+          height: 200px;
           border: 1px solid black;
           margin-top: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 0px;
           font-family: Arial, Helvetica, sans-serif;
           font-size: 1.2em;
           resize: none;"></textarea>
